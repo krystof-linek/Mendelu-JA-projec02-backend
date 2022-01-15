@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'cz.mendelu.xlinek'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.projectlombok:lombok:1.18.20'
+    runtimeOnly 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.2'
+
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+    implementation 'org.springframework.security:spring-security-core:5.6.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+    implementation 'org.springframework.security:spring-security-web:5.6.1'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+    implementation 'org.springframework.security:spring-security-config:5.6.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
